@@ -10,15 +10,16 @@
  @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
  body {
-       background-color: #ffffff;
-       font-family: 'Montserrat', sans-serif;
-       font-weight: 400;
-       font-size: 15px;
-       color: rgb(44, 44, 44);
- 
-       -webkit-font-smoothing: antialiased;
-       -webkit-overflow-scrolling: touch;
- }
+    background-color: #f0f0f0; /* Change the color code here */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: rgb(44, 44, 44);
+
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+}
+
  
  /* Titles */
  h1, h2, h3, h4, h5, h6 {
