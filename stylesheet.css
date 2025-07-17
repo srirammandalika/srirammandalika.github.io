@@ -1,4 +1,9 @@
-/* latin-ext */
+:root {
+  /* adjust this value to change line spacing site‑wide */
+  --line-spacing: 1.45;
+}
+
+/* latin‑ext */
 @font-face {
   font-family: 'Lato';
   font-style: italic;
@@ -14,7 +19,7 @@
   src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAXC-qNiXg7Q.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-/* latin-ext */
+/* latin‑ext */
 @font-face {
   font-family: 'Lato';
   font-style: italic;
@@ -30,7 +35,7 @@
   src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v15/S6u_w4BMUTPHjxsI5wq_Gwftx9897g.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-/* latin-ext */
+/* latin‑ext */
 @font-face {
   font-family: 'Lato';
   font-style: normal;
@@ -46,7 +51,7 @@
   src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-/* latin-ext */
+/* latin‑ext */
 @font-face {
   font-family: 'Lato';
   font-style: normal;
@@ -81,28 +86,33 @@ tr,
 p,
 a {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px
+  font-size: 14px;
+  line-height: var(--line-spacing);
 }
 
 strong {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 14px;
+  line-height: var(--line-spacing);
 }
 
 heading {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 22px;
+  line-height: var(--line-spacing);
 }
 
 papertitle {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 14px;
-  font-weight: 700
+  font-weight: 700;
+  line-height: var(--line-spacing);
 }
 
 name {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 32px;
+  line-height: var(--line-spacing);
 }
 
 .one {
@@ -128,4 +138,56 @@ name {
 
 span.highlight {
   background-color: #ffffd0;
+}
+
+
+
+/* Nav Bar */
+.container {
+  max-width: 800px;    /* match your tables */
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* 2. NAV BAR: sticky at top */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 0.5rem 0;      /* vertical padding only; side padding lives in .container */
+}
+
+/* 3. NAV LIST: flex row, right‑aligned */
+.site-nav ul {
+  display: flex;
+  justify-content: flex-end;  /* push links to the right edge */
+  align-items: center;        /* vertically center if nav height grows */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1.5rem;                /* modern replacement for li + li margin */
+}
+
+.site-nav a {
+  text-decoration: none;  /* remove underline */
+  color: #007acc;
+}
+
+.site-nav a:hover {
+  text-decoration: underline;
+  color: #00411d;         /* darker blue on hover */
+}
+
+/* 4. RESPONSIVE: stack links under 600px */
+@media (max-width: 600px) {
+  .site-nav ul {
+    flex-direction: column;        /* vertical stack */
+    align-items: flex-start;       /* left‑align in inner container */
+    gap: 0.5rem;                   /* adjust spacing */
+  }
+}
+.site-nav {
+  padding: 0.75rem 0;
 }
