@@ -140,6 +140,11 @@ span.highlight {
   background-color: #ffffd0;
 }
 
+.highlight-paper {
+  background-color: #fff9e6;
+  border: 1px solid #f0c36d;
+}
+
 
 
 /* Nav Bar */
