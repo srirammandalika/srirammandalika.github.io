@@ -590,6 +590,48 @@
     </tr>
   </table>
 </div>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const nameElement = document.querySelector("name");
+    if (!nameElement) return;
+
+    const names = [
+      "Sriram Mandalika",
+      "శ్రీరామ్ మండలీక",
+      "श्रीराम मंडलीका"
+    ];
+
+    let index = 0;
+    let intervalId = null;
+
+    function startRotation() {
+      if (intervalId !== null) return; // already running
+      intervalId = setInterval(() => {
+        index = (index + 1) % names.length;
+        nameElement.textContent = names[index];
+      }, 3000);
+    }
+
+    function stopRotation() {
+      if (intervalId !== null) {
+        clearInterval(intervalId);
+        intervalId = null;
+      }
+    }
+
+    // Start rotating initially
+    startRotation();
+
+    // Pause on hover, resume on mouse out
+    nameElement.addEventListener("mouseenter", stopRotation);
+    nameElement.addEventListener("mouseleave", startRotation);
+  });
+</script>
+
+
+
 </body>
 
 
